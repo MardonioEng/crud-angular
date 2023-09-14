@@ -10,11 +10,11 @@ import { Observable, tap } from 'rxjs';
   styleUrls: ['./courses.component.scss'],
 })
 export class CoursesComponent {
-  courses: Observable<Course[]>;
+  courses$: Observable<Course[]>;
   displayedColumns = ['name', 'category'];
 
   constructor(private coursesService: CoursesService) {
-    this.courses = this.coursesService
+    this.courses$ = this.coursesService
       .list()
       .pipe(tap((courses) => console.log(courses)));
   }
