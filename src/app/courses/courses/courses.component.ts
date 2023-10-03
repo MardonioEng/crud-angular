@@ -20,7 +20,6 @@ export class CoursesComponent {
     public dialog: MatDialog
   ) {
     this.courses$ = this.coursesService.list().pipe(
-      tap((courses) => console.log(courses)),
       catchError((error) => {
         this.onError('Erro ao carregar cursos.');
         return of([]);
