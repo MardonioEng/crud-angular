@@ -17,7 +17,7 @@ export class CoursesService {
   }
 
   loadById(id: string) {
-    return this.httpCliente.get<Course>(`${this.API}/${id}}`);
+    return this.httpCliente.get<Course>(`${this.API}/${id}`);
   }
 
   save(record: Partial<Course>) {
